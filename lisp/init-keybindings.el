@@ -15,7 +15,8 @@
   "," 'counsel-M-x
   "." 'ansi-term
   "/" 'evil-commentary-line
-  "bk" 'kill-buffer)
+  "bk" 'kill-buffer
+  "sd" 'swiper-thing-at-point)
 
 
 (provide 'init-keybindings)
