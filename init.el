@@ -31,6 +31,12 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     ;; spacemacs
+     spacemacs-editing
+     spacemacs-evil
+     spacemacs-ui
+
+     ;; langs
      go
      markdown
      ;; ----------------------------------------------------------------
@@ -45,12 +51,12 @@ values."
      git
      org
 
-     ;; vim layer
-     evil-commentary
-
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     ;; emacs
+     chinese
+     (shell :variables
+            shell-default-term-shell "/bin/zsh"
+            shell-default-height 30
+            shell-default-position 'bottom)
      ;; spell-checking
      syntax-checking
      ;; version-control
@@ -305,6 +311,10 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (setq configuration-layer--elpa-archives
+    '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+      ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+      ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
   )
 
 (defun dotspacemacs/user-config ()
@@ -316,6 +326,9 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (add-to-list 'load-path (expand-file-name "lisp" "~/.spacemacs.d/"))
   (require 'init-functions)
+  (require 'init-chinese)
+  (require 'init-shell)
+  (require 'init-company)
   (require 'init-evil)
   (require 'init-keybindings)
   )
@@ -329,7 +342,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (go-guru go-eldoc company-go go-mode evil-commentary org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot unfill mwim fuzzy flycheck-pos-tip pos-tip flycheck company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete smeargle orgit org-plus-contrib magit-gitflow magit-popup gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger popup git-link evil-magit magit transient git-commit with-editor mmm-mode markdown-toc dash s markdown-mode gh-md which-key wgrep use-package smex pcre2el macrostep ivy-hydra hydra lv helm-make flx exec-path-from-shell evil-visualstar evil-escape evil goto-chg undo-tree elisp-slime-nav diminish counsel-projectile projectile pkg-info epl counsel swiper ivy bind-map bind-key auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (winum restart-emacs paradox spinner open-junk-file flx-ido vi-tilde-fringe linum-relative evil-visual-mark-mode evil-unimpaired f evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu ws-butler uuidgen smartparens move-text lorem-ipsum link-hint hungry-delete expand-region eval-sexp-fu clean-aindent-mode xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help pyim pyim-basedict xr pangu-spacing find-by-pinyin-dired ace-pinyin pinyinlib go-guru go-eldoc company-go go-mode evil-commentary org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot unfill mwim fuzzy flycheck-pos-tip pos-tip flycheck company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete smeargle orgit org-plus-contrib magit-gitflow magit-popup gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger popup git-link evil-magit magit transient git-commit with-editor mmm-mode markdown-toc dash s markdown-mode gh-md which-key wgrep use-package smex pcre2el macrostep ivy-hydra hydra lv helm-make flx exec-path-from-shell evil-visualstar evil-escape evil goto-chg undo-tree elisp-slime-nav diminish counsel-projectile projectile pkg-info epl counsel swiper ivy bind-map bind-key auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
