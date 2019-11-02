@@ -33,8 +33,11 @@ values."
    '(
      ;; spacemacs
      spacemacs-editing
+     spacemacs-editing-visual
      spacemacs-evil
      spacemacs-ui
+     spacemacs-ui-visual
+     spacemacs-org
 
      ;; langs
      go
@@ -231,7 +234,7 @@ values."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup nil
+   dotspacemacs-fullscreen-at-startup 1
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
    dotspacemacs-fullscreen-use-non-native nil
@@ -342,7 +345,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (winum restart-emacs paradox spinner open-junk-file flx-ido vi-tilde-fringe linum-relative evil-visual-mark-mode evil-unimpaired f evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu ws-butler uuidgen smartparens move-text lorem-ipsum link-hint hungry-delete expand-region eval-sexp-fu clean-aindent-mode xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help pyim pyim-basedict xr pangu-spacing find-by-pinyin-dired ace-pinyin pinyinlib go-guru go-eldoc company-go go-mode evil-commentary org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot unfill mwim fuzzy flycheck-pos-tip pos-tip flycheck company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete smeargle orgit org-plus-contrib magit-gitflow magit-popup gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger popup git-link evil-magit magit transient git-commit with-editor mmm-mode markdown-toc dash s markdown-mode gh-md which-key wgrep use-package smex pcre2el macrostep ivy-hydra hydra lv helm-make flx exec-path-from-shell evil-visualstar evil-escape evil goto-chg undo-tree elisp-slime-nav diminish counsel-projectile projectile pkg-info epl counsel swiper ivy bind-map bind-key auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (volatile-highlights rainbow-delimiters indent-guide highlight-parentheses highlight-numbers parent-mode highlight-indentation column-enforce-mode spaceline powerline popwin neotree hl-todo golden-ratio fill-column-indicator fancy-battery toc-org org-bullets winum restart-emacs paradox spinner open-junk-file flx-ido vi-tilde-fringe linum-relative evil-visual-mark-mode evil-unimpaired f evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu ws-butler uuidgen smartparens move-text lorem-ipsum link-hint hungry-delete expand-region eval-sexp-fu clean-aindent-mode xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help pyim pyim-basedict xr pangu-spacing find-by-pinyin-dired ace-pinyin pinyinlib go-guru go-eldoc company-go go-mode evil-commentary org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot unfill mwim fuzzy flycheck-pos-tip pos-tip flycheck company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete smeargle orgit org-plus-contrib magit-gitflow magit-popup gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger popup git-link evil-magit magit transient git-commit with-editor mmm-mode markdown-toc dash s markdown-mode gh-md which-key wgrep use-package smex pcre2el macrostep ivy-hydra hydra lv helm-make flx exec-path-from-shell evil-visualstar evil-escape evil goto-chg undo-tree elisp-slime-nav diminish counsel-projectile projectile pkg-info epl counsel swiper ivy bind-map bind-key auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

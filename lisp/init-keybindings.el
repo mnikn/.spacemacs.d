@@ -15,8 +15,13 @@
   "," 'counsel-M-x
   "." 'ansi-term
   "/" 'evil-commentary-line
+  "<left>" 'windmove-left
+  "<right>" 'windmove-right
+  "<up>" 'windmove-up
+  "<down>" 'windmove-down
   "bk" 'kill-buffer
-  "sd" 'swiper-thing-at-point)
+  "sd" 'swiper-thing-at-point
+  "wh" 'split-window-vertically)
 
 
 (provide 'init-keybindings)
