@@ -22,7 +22,9 @@
   "bk" 'kill-buffer
   "sd" 'swiper-thing-at-point
   "ad" 'dired-jump
-  "fp" 'ffap)
+  "fp" 'ffap
+  "ggl" 'magit-log-current
+  "ggg" 'magit-log-all)
 
 
 (provide 'init-keybindings)
