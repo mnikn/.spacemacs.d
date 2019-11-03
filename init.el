@@ -50,7 +50,7 @@ values."
      go
      markdown
      emacs-lisp
-     ;; javascript
+     (javascript :variables javascript-disable-tern-port-files nil)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
