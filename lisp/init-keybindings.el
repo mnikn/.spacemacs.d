@@ -21,7 +21,8 @@
   "<down>" 'windmove-down
   "bk" 'kill-buffer
   "sd" 'swiper-thing-at-point
-  "wh" 'split-window-vertically)
+  "ad" 'dired-jump
+  "fp" 'ffap)
 
 
 (provide 'init-keybindings)
