@@ -338,13 +338,13 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (add-to-list 'load-path (expand-file-name "lisp" "~/.spacemacs.d/"))
   (require 'init-functions)
+  (require 'init-edit)
   (require 'init-chinese)
   (require 'init-shell)
   (require 'init-company)
   (require 'init-evil)
   (require 'init-org)
-  (require 'init-keybindings)
-  )
+  (require 'init-keybindings))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.

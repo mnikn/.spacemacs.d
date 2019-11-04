@@ -20,11 +20,15 @@
   "<up>" 'windmove-up
   "<down>" 'windmove-down
   "bk" 'kill-buffer
-  "sd" 'swiper-thing-at-point
   "ad" 'dired-jump
   "fp" 'ffap
-  "ggl" 'magit-log-current
-  "ggg" 'magit-log-all)
+  "ggl" 'magit-log-buffer-file
+  "ggg" 'magit-log-current
+  "si" 'counsel-imenu
+  "sd" 'swiper-thing-at-point
+  "sj" 'counsel-etags-find-tag-at-point
+  "sap" 'counsel-projectile-ag
+  "sgp" 'counsel-projectile-git-grep)
 
 
 (provide 'init-keybindings)
