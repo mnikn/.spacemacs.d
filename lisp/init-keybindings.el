@@ -10,8 +10,12 @@
 (evil-define-key 'normal 'global "s" 'save-buffer)
 (evil-define-key '(normal motion visual) 'global "f" 'avy-goto-char-in-line)
 
+(spacemacs/set-leader-keys-for-major-mode 'js2-mode
+  "RET" 'web-beautify-js)
+
 (spacemacs/set-leader-keys
   "SPC" 'ivy-switch-buffer
+  "RET" 'indent-region
   "," 'counsel-M-x
   "." 'ansi-term
   "/" 'evil-commentary-line
@@ -24,6 +28,7 @@
   "fp" 'ffap
   "ggl" 'magit-log-buffer-file
   "ggg" 'magit-log-current
+  "xh" 'mark-whole-buffer
   "si" 'counsel-imenu
   "sd" 'swiper-thing-at-point
   "sj" 'counsel-etags-find-tag-at-point
