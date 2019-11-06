@@ -10,6 +10,11 @@
 (evil-define-key 'normal 'global "s" 'save-buffer)
 (evil-define-key '(normal motion visual) 'global "f" 'avy-goto-char-in-line)
 
+;; ivy
+(define-key ivy-minibuffer-map (kbd "C-j") 'ivy-next-line)
+(define-key ivy-minibuffer-map (kbd "C-k") 'ivy-previous-line)
+(define-key ivy-minibuffer-map (kbd "C-;") 'ivy-backward-delete-char)
+
 (spacemacs/set-leader-keys-for-major-mode 'js2-mode
   "RET" 'web-beautify-js)
 
