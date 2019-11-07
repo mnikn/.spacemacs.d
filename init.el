@@ -52,13 +52,20 @@ values."
      markdown
      emacs-lisp
      (javascript :variables javascript-disable-tern-port-files nil)
+     react
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      ivy
-     (auto-completion :variables auto-completion-enable-snippets-in-popup t)
+     (auto-completion :variables
+                     auto-completion-return-key-behavior 'complete
+                     auto-completion-tab-key-behavior 'cycle
+                     auto-completion-complete-with-key-sequence nil
+                     auto-completion-complete-with-key-sequence-delay 0.1
+                     auto-completion-enable-snippets-in-popup t
+                     auto-completion-private-snippets-directory nil)
      better-defaults
      git
      org
@@ -349,6 +356,7 @@ you should place your code here."
   (require 'init-shell)
   (require 'init-company)
   (require 'init-evil)
+  (require 'init-frontend)
   (require 'init-org)
   (require 'init-keybindings))
 

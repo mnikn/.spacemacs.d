@@ -11,4 +11,9 @@
               company-minimum-prefix-length 1
               company-show-numbers t)
 
+
+;; (add-hook 'go-mode-hook
+;;           (lambda ()
+;;             (set (make-local-variable 'company-backends) '(company-dabbrev-code company-dabbrev company-etags company-keywords company-files))))
+
 (provide 'init-company)

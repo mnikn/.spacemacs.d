@@ -14,6 +14,7 @@
 (define-key ivy-minibuffer-map (kbd "C-j") 'ivy-next-line)
 (define-key ivy-minibuffer-map (kbd "C-k") 'ivy-previous-line)
 (define-key ivy-minibuffer-map (kbd "C-;") 'ivy-backward-delete-char)
+(define-key ivy-minibuffer-map (kbd "C-l") 'counsel-down-directory)
 
 (spacemacs/set-leader-keys-for-major-mode 'js2-mode
   "RET" 'web-beautify-js)
