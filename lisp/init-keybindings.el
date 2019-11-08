@@ -1,14 +1,17 @@
 (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
 
-(evil-define-key '(normal insert) 'global (kbd "<f1>") 'toggle-input-method)
 
 ;; evil
+(evil-define-key '(normal insert) 'global (kbd "<f1>") 'toggle-input-method)
+(evil-define-key '(normal insert) 'global (kbd "<f2>") 'insert-translated-name-insert)
 (evil-define-key '(normal motion visual) 'global "K" 'mnikn/evil-move-up)
 (evil-define-key '(normal motion visual) 'global "J" 'mnikn/evil-move-down)
 (evil-define-key '(normal motion visual) 'global "H" 'evil-first-non-blank)
 (evil-define-key '(normal motion visual) 'global "L" 'evil-end-of-line)
 (evil-define-key 'normal 'global "s" 'save-buffer)
+(evil-define-key 'normal 'global "m" 'evil-jump-item)
 (evil-define-key '(normal motion visual) 'global "f" 'avy-goto-char-in-line)
+(evil-define-key '(normal insert) 'go-mode-map (kbd "<backtab>") 'company-go)
 
 ;; ivy
 (define-key ivy-minibuffer-map (kbd "C-j") 'ivy-next-line)
