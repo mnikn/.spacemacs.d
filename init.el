@@ -32,7 +32,6 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     html
      ;; spacemacs-completion
      ;; spacemacs-layouts
      spacemacs-editing
@@ -51,6 +50,9 @@ values."
      go
      markdown
      emacs-lisp
+     typescript
+     nginx
+     html
      (javascript :variables javascript-disable-tern-port-files nil)
      react
      ;; ----------------------------------------------------------------
@@ -61,9 +63,8 @@ values."
      ivy
      (auto-completion :variables
                      auto-completion-return-key-behavior 'complete
-                     auto-completion-tab-key-behavior 'cycle
-                     auto-completion-complete-with-key-sequence nil
-                     auto-completion-complete-with-key-sequence-delay 0.1
+                     auto-completion-enable-sort-by-usage t
+                     auto-completion-complete-with-key-sequence-delay 0
                      auto-completion-enable-snippets-in-popup t
                      auto-completion-private-snippets-directory nil)
      better-defaults
@@ -90,7 +91,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(protobuf-mode)
+   dotspacemacs-additional-packages '(protobuf-mode yasnippet-snippets)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -355,7 +356,6 @@ you should place your code here."
   (require 'init-edit)
   (require 'init-chinese)
   (require 'init-shell)
-  (require 'init-company)
   (require 'init-evil)
   (require 'init-frontend)
   (require 'init-org)
@@ -370,7 +370,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (zeal-at-point counsel-dash dash-docs protobuf-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode haml-mode emmet-mode company-web web-completion-data git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter diff-hl xkcd counsel-etags ggtags request dumb-jump evil-cleverparens paredit persp-mode google-translate eyebrowse define-word web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern dash-functional tern coffee-mode volatile-highlights rainbow-delimiters indent-guide highlight-parentheses highlight-numbers parent-mode highlight-indentation column-enforce-mode spaceline powerline popwin neotree hl-todo golden-ratio fill-column-indicator fancy-battery toc-org org-bullets winum restart-emacs paradox spinner open-junk-file flx-ido vi-tilde-fringe linum-relative evil-visual-mark-mode evil-unimpaired f evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu ws-butler uuidgen smartparens move-text lorem-ipsum link-hint hungry-delete expand-region eval-sexp-fu clean-aindent-mode xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help pyim pyim-basedict xr pangu-spacing find-by-pinyin-dired ace-pinyin pinyinlib go-guru go-eldoc company-go go-mode evil-commentary org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot unfill mwim fuzzy flycheck-pos-tip pos-tip flycheck company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete smeargle orgit org-plus-contrib magit-gitflow magit-popup gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger popup git-link evil-magit magit transient git-commit with-editor mmm-mode markdown-toc dash s markdown-mode gh-md which-key wgrep use-package smex pcre2el macrostep ivy-hydra hydra lv helm-make flx exec-path-from-shell evil-visualstar evil-escape evil goto-chg undo-tree elisp-slime-nav diminish counsel-projectile projectile pkg-info epl counsel swiper ivy bind-map bind-key auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (tide typescript-mode yasnippet-snippets nginx-mode zeal-at-point counsel-dash dash-docs protobuf-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode haml-mode emmet-mode company-web web-completion-data git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter diff-hl xkcd counsel-etags ggtags request dumb-jump evil-cleverparens paredit persp-mode google-translate eyebrowse define-word web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern dash-functional tern coffee-mode volatile-highlights rainbow-delimiters indent-guide highlight-parentheses highlight-numbers parent-mode highlight-indentation column-enforce-mode spaceline powerline popwin neotree hl-todo golden-ratio fill-column-indicator fancy-battery toc-org org-bullets winum restart-emacs paradox spinner open-junk-file flx-ido vi-tilde-fringe linum-relative evil-visual-mark-mode evil-unimpaired f evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu ws-butler uuidgen smartparens move-text lorem-ipsum link-hint hungry-delete expand-region eval-sexp-fu clean-aindent-mode xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help pyim pyim-basedict xr pangu-spacing find-by-pinyin-dired ace-pinyin pinyinlib go-guru go-eldoc company-go go-mode evil-commentary org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot unfill mwim fuzzy flycheck-pos-tip pos-tip flycheck company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete smeargle orgit org-plus-contrib magit-gitflow magit-popup gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger popup git-link evil-magit magit transient git-commit with-editor mmm-mode markdown-toc dash s markdown-mode gh-md which-key wgrep use-package smex pcre2el macrostep ivy-hydra hydra lv helm-make flx exec-path-from-shell evil-visualstar evil-escape evil goto-chg undo-tree elisp-slime-nav diminish counsel-projectile projectile pkg-info epl counsel swiper ivy bind-map bind-key auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

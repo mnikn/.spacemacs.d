@@ -21,6 +21,12 @@
 
 (spacemacs/set-leader-keys-for-major-mode 'js2-mode
   "RET" 'web-beautify-js)
+(spacemacs/set-leader-keys-for-major-mode 'web-mode
+  "RET" 'web-beautify-html)
+(spacemacs/set-leader-keys-for-major-mode 'typescript-mode
+  "RET" 'typescript/format)
+(spacemacs/set-leader-keys-for-major-mode 'react-mode
+  "RET" 'web-beautify-js)
 
 (spacemacs/set-leader-keys
   "SPC" 'ivy-switch-buffer
