@@ -11,7 +11,7 @@
   :mode
   ("\\.vue". web-mode)
   :config
-  (add-hook 'before-save-hook 'webmode-format-before-save)
+  ;; (add-hook 'before-save-hook 'webmode-format-before-save)
   )
 (use-package react-mode
   :mode

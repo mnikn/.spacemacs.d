@@ -66,7 +66,7 @@ values."
                      auto-completion-enable-sort-by-usage t
                      auto-completion-complete-with-key-sequence-delay 0
                      auto-completion-enable-snippets-in-popup t
-                     auto-completion-private-snippets-directory nil)
+                     auto-completion-private-snippets-directory ("~/.spacemacs.d/snippets"))
      better-defaults
      git
      org
