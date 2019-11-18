@@ -1,0 +1,6 @@
+# -*- mode: js2-mode -*-
+# name: debug log
+# key: dlog
+# --
+
+console.log("your $1: ", $1);

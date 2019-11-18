@@ -1,0 +1,6 @@
+# -*- mode: web-mode -*-
+# name: debug log
+# key: dlog
+# --
+
+console.log("your $1: ", $1);

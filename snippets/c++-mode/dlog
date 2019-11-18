@@ -1,0 +1,6 @@
+# -*- mode: c++-mode -*-
+# name: debug log
+# key: dlog
+# --
+
+printf("your data is :%s", $1)
